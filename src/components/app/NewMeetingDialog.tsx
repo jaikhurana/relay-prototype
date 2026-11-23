@@ -153,13 +153,14 @@ export function NewMeetingDialog() {
                         type="button"
                         aria-expanded={nm.whyOpen}
                         onClick={() => update({ whyOpen: !nm.whyOpen })}
+                        data-demo="nm-why"
                         className="mt-2 inline-flex items-center gap-1 rounded text-13 font-medium text-mtext"
                       >
                         Why this time?
                         <ChevronDown size={14} className={`transition-transform ${nm.whyOpen ? 'rotate-180' : ''}`} aria-hidden />
                       </button>
                       {nm.whyOpen && (
-                        <p className="mt-1 text-13 leading-[18px] text-text">
+                        <p className="mt-1 text-13 leading-[18px] text-text" data-demo="nm-why-text">
                           Fair Turn privately counts each person's minutes in calls outside their working hours this month. The next off-hours
                           call goes to whoever has the fewest.
                         </p>

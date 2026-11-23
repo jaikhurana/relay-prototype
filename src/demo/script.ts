@@ -91,6 +91,8 @@ export const SCRIPT: DemoStep[] = [
   { chapter: 'ch6', action: 'type', target: 'nm-title', text: 'Launch go/no-go', caption: C6a, ms: 3800 },
   { chapter: 'ch6', action: 'click', target: 'nm-live', caption: 'No shared hour, so someone joins outside their day.', ms: 4500 },
   { chapter: 'ch6', action: 'highlight', target: 'nm-suggestion', caption: 'Fair Turn picks Sam: fewest off-hours minutes this month.', ms: 6000 },
+  { chapter: 'ch6', action: 'click', target: 'nm-why', caption: 'Why this time? Fair Turn explains it right in the booking.', ms: 3000 },
+  { chapter: 'ch6', action: 'highlight', target: 'nm-why-text', caption: 'It counts off-hours call minutes this month. The next one goes to whoever has fewest.', ms: 6500 },
   { chapter: 'ch6', action: 'highlight', target: 'nm-private', caption: "Counts stay private. No one sees anyone else's.", ms: 4500 },
   { chapter: 'ch6', action: 'click', target: 'nm-book', caption: 'Booked: 7:30 am for Sam, 6:00 pm for Jai.', ms: 4000 },
 
