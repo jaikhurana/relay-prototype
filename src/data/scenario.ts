@@ -307,6 +307,8 @@ export interface BeatInfo {
   time: string; // UTC ISO
   viewAs: ViewerId;
   label: string;
+  /** Descriptive step name for the panel: what happens. */
+  step: string;
   title: string;
   lines: [string, string];
   rule: string;
@@ -316,7 +318,7 @@ export interface BeatInfo {
 export const BEATS: BeatInfo[] = [
   {
     id: 1, time: localInstant(Z.NY, '2027-01-18', '16:00'), viewAs: 'sam',
-    label: '2:30 am · Sam asks a sleeping Jai', title: 'Sam asks a sleeping Jai',
+    label: '2:30 am · Sam asks a sleeping Jai', step: 'Sam leaves Jai a complete ask', title: 'Sam asks a sleeping Jai',
     lines: [
       "4:00 pm in New York. Sam needs Jai, but it's 2:30 am in Bangalore.",
       "Jai is asleep, so the composer asks for four things he'll need.",
@@ -326,7 +328,7 @@ export const BEATS: BeatInfo[] = [
   },
   {
     id: 2, time: localInstant(Z.IST, '2027-01-19', '09:30'), viewAs: 'jai',
-    label: "9:30 am · Jai's morning queue", title: "Jai's morning queue",
+    label: "9:30 am · Jai's morning queue", step: 'Jai starts his day with a sorted queue', title: "Jai's morning queue",
     lines: [
       '9:30 am in Bangalore. One notification, once a morning.',
       "Online now first, then whoever's day starts soonest.",
@@ -336,7 +338,7 @@ export const BEATS: BeatInfo[] = [
   },
   {
     id: 3, time: localInstant(Z.IST, '2027-01-19', '17:30'), viewAs: 'jai',
-    label: '5:30 pm · Log-off nudge', title: 'Log-off nudge',
+    label: '5:30 pm · Log-off nudge', step: 'One nudge, an hour before Jai logs off', title: 'Log-off nudge',
     lines: [
       '5:30 pm: an hour before Jai logs off. One grouped nudge, max 3 a day.',
       "Jai answers Sam's two asks. Both ready before Sam's 9 am.",
@@ -346,7 +348,7 @@ export const BEATS: BeatInfo[] = [
   },
   {
     id: 4, time: localInstant(Z.IST, '2027-01-19', '18:00'), viewAs: 'jai',
-    label: '6:00 pm · Jai records his demo', title: 'Jai records his demo',
+    label: '6:00 pm · Jai records his demo', step: 'Jai records his demo before he leaves', title: 'Jai records his demo',
     lines: [
       'The demo review is at 7:30 pm, after Jai logs off. No shared hours.',
       'So Jai records his demo before he leaves.',
@@ -356,7 +358,7 @@ export const BEATS: BeatInfo[] = [
   },
   {
     id: 5, time: localInstant(Z.NY, '2027-01-19', '09:00'), viewAs: 'sam',
-    label: "7:30 pm · Sam's team watches", title: "Sam's team watches",
+    label: "7:30 pm · Sam's team watches", step: "Sam's team watches and pins questions", title: "Sam's team watches",
     lines: [
       "9:00 am in New York. Sam's team watches Jai's demo together.",
       "Questions go to Jai's morning queue. No 8 pm call for Jai.",
@@ -366,7 +368,7 @@ export const BEATS: BeatInfo[] = [
   },
   {
     id: 6, time: localInstant(Z.NY, '2027-01-19', '09:20'), viewAs: 'sam',
-    label: '7:50 pm · Fair Turn books a live call', title: 'Fair Turn books a live call',
+    label: '7:50 pm · Fair Turn books a live call', step: 'Fair Turn books a must-be-live call', title: 'Fair Turn books a live call',
     lines: [
       'Some calls must be live, like the launch go/no-go.',
       'Fair Turn picks Sam: fewest off-hours minutes this month.',
@@ -376,7 +378,7 @@ export const BEATS: BeatInfo[] = [
   },
   {
     id: 7, time: localInstant(Z.IST, '2027-01-20', '09:30'), viewAs: 'jai',
-    label: 'Wed 9:30 am · Questions arrive', title: 'Questions arrive',
+    label: 'Wed 9:30 am · Questions arrive', step: "Jai answers the team's questions", title: 'Questions arrive',
     lines: [
       "Next morning, the team's questions top Jai's queue.",
       'Jai answers each one at that moment in the demo.',
