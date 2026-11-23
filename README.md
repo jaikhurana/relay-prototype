@@ -43,8 +43,4 @@ Push the repo to GitHub, then in Vercel choose **Import project**, framework **V
 - `src/state/store.ts` (zustand) has `beatScene(n)`, which returns the full state for each beat, so stepper jumps are instant and order-independent.
 - `src/demo/` drives the real UI: the cursor glides to `[data-demo="…"]` targets, types into the real inputs and clicks the real buttons.
 
-## Avatars
-
-Drop `jai.svg`, `sam.svg` and `priya.svg` into `public/avatars/` and restart `npm run dev` (or rebuild). Until a file exists, that person gets an initials avatar, so a missing file never triggers a 404.
-
 No backend, no network calls, no login, no analytics, no localStorage.
