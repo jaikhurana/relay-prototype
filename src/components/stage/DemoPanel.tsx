@@ -115,8 +115,8 @@ export function DemoPanel({ compact = false }: { compact?: boolean }) {
         <WorldClocks compact={compact} />
       </div>
 
-      <nav className={compact ? 'mt-3' : 'mt-4'} aria-label="Story">
-        <div className={`${compact ? 'mb-0.5' : 'mb-1.5'} text-12 font-medium uppercase tracking-[.06em] text-mute`}>Story</div>
+      <nav className={compact ? 'mt-3' : 'mt-4'} aria-label="One day, three time zones">
+        <div className={`${compact ? 'mb-0.5' : 'mb-1.5'} text-12 font-medium uppercase tracking-[.06em] text-mute`}>One day, three time zones</div>
         <ol className="relative">
           <span className="absolute bottom-3 left-[7px] top-3 w-px bg-line" aria-hidden />
           {BEATS.map((b) => {
