@@ -17,7 +17,7 @@ function WorldClocks({ compact }: { compact: boolean }) {
           const day = hour >= 6 && hour < 18;
           const working = isWorking(p, simTime);
           return (
-            <li key={p.id} className={`flex items-center gap-2.5 px-3 ${compact ? 'h-8' : 'h-9'}`}>
+            <li key={p.id} className={`flex items-center gap-2.5 px-3 ${compact ? 'h-[30px]' : 'h-[34px]'}`}>
               <Avatar id={p.id} size={24} />
               <span className="w-[78px] text-14 font-bold text-ink">{p.city}</span>
               <span className="tnum flex-1 text-14 text-text">{fmtTime(simTime, p.zone)}</span>
@@ -33,7 +33,7 @@ function WorldClocks({ compact }: { compact: boolean }) {
           );
         })}
       </ul>
-      <div className={`flex ${compact ? 'h-8' : 'h-9'} items-center rounded-b-card border border-t-0 border-line px-3`}>
+      <div className={`flex ${compact ? 'h-[30px]' : 'h-9'} items-center rounded-b-card border border-t-0 border-line px-3`}>
         <span className="inline-flex h-6 items-center rounded-full bg-warnbg px-2.5 text-12 font-bold text-warn">No hour shared by all three</span>
       </div>
     </section>
@@ -68,12 +68,12 @@ export function DemoPanel({ compact = false }: { compact?: boolean }) {
       </div>
       <p className="mt-0.5 text-13 text-soft">Prototype · Media.net APM case</p>
 
-      <div className={`${compact ? 'mt-3' : 'mt-4'} flex items-center gap-2`}>
+      <div className={`${compact ? 'mt-2.5' : 'mt-4'} flex items-center gap-2`}>
         <button
           type="button"
           onClick={startDemo}
           data-testid="watch-demo"
-          className={`flex ${compact ? 'h-10' : 'h-11'} flex-1 items-center justify-center gap-2 rounded-[10px] bg-magentafill text-15 font-bold text-white shadow-sm hover:bg-[#D60454]`}
+          className={`flex ${compact ? 'h-9' : 'h-11'} flex-1 items-center justify-center gap-2 rounded-[10px] bg-magentafill text-15 font-bold text-white shadow-sm hover:bg-[#D60454]`}
         >
           <Play size={16} fill="currentColor" aria-hidden />
           Watch demo
@@ -83,7 +83,7 @@ export function DemoPanel({ compact = false }: { compact?: boolean }) {
         </button>
       </div>
 
-      <div className={compact ? 'mt-3' : 'mt-4'}>
+      <div className={compact ? 'mt-2.5' : 'mt-4'}>
         <div className="mb-1.5 text-12 font-medium uppercase tracking-[.06em] text-mute" id="viewas-label">
           View as
         </div>
@@ -111,12 +111,16 @@ export function DemoPanel({ compact = false }: { compact?: boolean }) {
         </div>
       </div>
 
-      <div className={`${compact ? 'mt-3' : 'mt-4'} rounded-card transition-shadow duration-300 ${introGlow ? 'shadow-[0_0_0_2px_#FFFFFF,0_0_0_4px_#EE065E]' : ''}`}>
+      <div className={`${compact ? 'mt-2.5' : 'mt-4'} rounded-card transition-shadow duration-300 ${introGlow ? 'shadow-[0_0_0_2px_#FFFFFF,0_0_0_4px_#EE065E]' : ''}`}>
         <WorldClocks compact={compact} />
       </div>
 
-      <nav className={compact ? 'mt-3' : 'mt-4'} aria-label="One day, three time zones">
-        <div className={`${compact ? 'mb-0.5' : 'mb-1.5'} text-12 font-medium uppercase tracking-[.06em] text-mute`}>One day, three time zones</div>
+      <nav className={compact ? 'mt-2.5' : 'mt-4'} aria-label="One day, three time zones">
+        <div className="text-12 font-medium uppercase tracking-[.06em] text-mute">One day, three time zones</div>
+        <p className={`${compact ? 'mb-1' : 'mb-1.5'} mt-0.5 text-12 leading-4 text-soft`} data-testid="how-to">
+          Click a moment to jump there, then click around the app yourself. <span className="font-bold">View as</span> switches
+          whose screen you see.
+        </p>
         <ol className="relative">
           <span className="absolute bottom-3 left-[7px] top-3 w-px bg-line" aria-hidden />
           {BEATS.map((b) => {
@@ -128,7 +132,7 @@ export function DemoPanel({ compact = false }: { compact?: boolean }) {
                   onClick={() => go(b.id)}
                   aria-current={on ? 'step' : undefined}
                   data-testid={`step-${b.id}`}
-                  className={`relative flex ${compact ? 'h-6' : 'h-[26px]'} w-full items-center gap-3 rounded-input pr-2 text-left hover:bg-bg`}
+                  className={`relative flex ${compact ? 'h-[22px]' : 'h-6'} w-full items-center gap-3 rounded-input pr-2 text-left hover:bg-bg`}
                 >
                   <span
                     className={`relative z-[1] flex h-[15px] w-[15px] shrink-0 items-center justify-center rounded-full border-2 bg-white ${
@@ -147,7 +151,7 @@ export function DemoPanel({ compact = false }: { compact?: boolean }) {
         </ol>
       </nav>
 
-      <section className={`${compact ? 'mt-2 px-3 py-2.5' : 'mt-3 p-3'} rounded-card bg-bg`} aria-live="polite" data-testid="whats-happening">
+      <section className={`${compact ? 'mt-1.5 px-3 py-2' : 'mt-3 p-3'} rounded-card bg-bg`} aria-live="polite" data-testid="whats-happening">
         <div className="flex items-center gap-1">
           <span className="flex-1 text-12 font-medium uppercase tracking-[.06em] text-mute">What's happening</span>
           {FEATURES.map((f) => {
