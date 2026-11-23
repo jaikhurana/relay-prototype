@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* neutrals */
+  --ink: #141416;
+  --text: #2a2a30;
+  --soft: #55555f;
+  --mute: #77777f;
+  --line: #e2e1dc;
+  --window-line: #dad9d4;
+  --bg: #fafaf8;
+  --stage: #efeeea;
+  --sidebar: #f7f6f2;
+  --titlebar: #f4f3ef;
+  --rail: #1f1f24;
+  /* relay only */
+  --magenta: #ee065e;
+  --magenta-text: #d1004f;
+  --pink: #fdebf2;
+  --pink-line: #f6b3cc;
+  /* status */
+  --success: #2fa36b;
+  --success-bg: #e7f5ee;
+  --warning: #b5561a;
+  --warning-bg: #fbefe6;
+  /* radius */
+  --r-window: 14px;
+  --r-card: 12px;
+  --r-input: 8px;
+  /* shadow */
+  --shadow-sm: 0 1px 2px rgba(20, 20, 22, 0.06), 0 4px 12px rgba(20, 20, 22, 0.06);
+  --shadow-toast: 0 12px 32px rgba(20, 20, 22, 0.18);
+  --shadow-window: 0 24px 60px rgba(20, 20, 22, 0.18);
+  /* motion */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--stage);
+  color: var(--text);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'ss01' 0;
+}
+
+/* Focus ring: 2px magenta, offset 2 */
+:focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 2px;
+}
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-offset: 0;
+}
+
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d3ce transparent;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
